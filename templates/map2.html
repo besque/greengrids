@@ -104,6 +104,7 @@
         
         <!-- Map Placeholder -->
         <div id="map-container" class="w-full h-[600px] rounded-lg overflow-hidden shadow-lg mb-8">
+            
             <iframe src="{{ url_for('static', filename='maps/bengaluru_after_heatmap.html') }}" 
                     class="w-full h-full border-0"
                     sandbox="allow-same-origin allow-scripts">
@@ -171,7 +172,9 @@
                     <div class="text-8xl font-bold mb-4" id="gpi-value" style="color: #65a30d;">-</div>
                     
                 </div>
+                
             </div>
+            
         </div>
         
         <!-- Grid for other metrics -->
@@ -206,6 +209,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- Air Pollutant Snapshot -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-border-grey mb-12">
+    <h3 class="text-2xl font-bold mb-6 text-center">Air Pollutant Snapshot</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- PM2.5 Card -->
+        <div class="bg-light-grey p-6 rounded-lg shadow-sm">
+            <h4 class="text-xl font-bold mb-2">PM2.5 Concentration</h4>
+            <p class="text-4xl font-bold text-brown mb-1" id="pm25-value">68 µg/m³</p>
+            <p class="text-sm text-medium-grey mb-3" id="pm25-status">Unhealthy</p>
+            <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-brown h-3 rounded-full" id="pm25-bar" style="width: 68%"></div>
+            </div>
+            <p class="text-xs mt-3 text-gray-600">
+                Fine particulate matter linked to respiratory and cardiac issues.
+            </p>
+        </div>
+
+        <!-- CO Emissions Card -->
+        <div class="bg-light-grey p-6 rounded-lg shadow-sm">
+            <h4 class="text-xl font-bold mb-2">Carbon Monoxide (CO)</h4>
+            <p class="text-4xl font-bold text-primary-green mb-1" id="co-value">1.9 ppm</p>
+            <p class="text-sm text-medium-grey mb-3" id="co-status">Moderate</p>
+            <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-primary-green h-3 rounded-full" id="co-bar" style="width: 38%"></div>
+            </div>
+            <p class="text-xs mt-3 text-gray-600">
+                Emitted mainly from traffic and incomplete combustion.
+            </p>
+        </div>
+
+    </div>
+</div>
+
         
         <!-- Cooling Potential Simulator Section -->
         <div class="bg-light-grey p-8 rounded-lg shadow-md mb-12">
